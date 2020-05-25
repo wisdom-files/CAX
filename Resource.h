@@ -17,6 +17,14 @@
 #define IDI_ICON2                       130
 #define IDC_STATIC                      -1
 
+#define IDC_NEW_FILES_XIR               133  // 文件-新建-XIR文件包 (File-New-XIR file package)
+#define IDC_NEW_FILES_RCC               134  // 文件-新建-RCC文件包 (File-New-RCC file package)
+#define IDC_NEW_FILES_Import            135  // 文件-新建-导入文件 (File-New-Import File)
+#define IDC_NEW_FILES_Export            136  // 文件-新建-导出文件 (File-New-Export File)
+#define IDC_NEW_FILES_information       137  // 文件-新建-文件信息 (File-New-File Information)
+#define IDC_NEW_FILES_Safety            139  // 文件-新建-安全设置 (File-New-Security Settings)
+
+
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED

@@ -124,6 +124,18 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         case IDM_EXIT:
             DestroyWindow(hWnd);
             break;
+        case IDC_NEW_FILES_Import:
+            DialogBox(hInst, MAKEINTRESOURCE(IDC_NEW_FILES_Import), hWnd, About);
+            break;
+        case IDC_NEW_FILES_Export:
+            DialogBox(hInst, MAKEINTRESOURCE(IDC_NEW_FILES_Export), hWnd, About);
+            break;
+        case IDC_NEW_FILES_information:
+            DialogBox(hInst, MAKEINTRESOURCE(IDC_NEW_FILES_information), hWnd, About);
+            break;
+        case IDC_NEW_FILES_Safety:
+            DialogBox(hInst, MAKEINTRESOURCE(IDC_NEW_FILES_Safety), hWnd, About);
+            break;
         default:
             return DefWindowProc(hWnd, message, wParam, lParam);
         }
