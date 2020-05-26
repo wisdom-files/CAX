@@ -124,7 +124,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         case IDM_EXIT:
             DestroyWindow(hWnd);
             break;
-        case IDC_NEW_FILES_Import:
+        case IDC_NEW_FILES_Import:                                                                                            // 文件菜单
             DialogBox(hInst, MAKEINTRESOURCE(IDC_NEW_FILES_Import), hWnd, About);
             break;
         case IDC_NEW_FILES_Export:
@@ -135,6 +135,48 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             break;
         case IDC_NEW_FILES_Safety:
             DialogBox(hInst, MAKEINTRESOURCE(IDC_NEW_FILES_Safety), hWnd, About);
+            break;
+        case IDC_edit_delete:                                                                                                 // 编辑菜单
+            DialogBox(hInst, MAKEINTRESOURCE(IDC_edit_delete), hWnd, About);
+            break;
+        case IDC_edit_setting:
+            DialogBox(hInst, MAKEINTRESOURCE(IDC_edit_setting), hWnd, About);
+            break;
+        case IDC_edit_Openwithexternalprogram:
+            DialogBox(hInst, MAKEINTRESOURCE(IDC_edit_Openwithexternalprogram), hWnd, About);
+            break;
+        case IDC_edit_Fileinformation:
+            DialogBox(hInst, MAKEINTRESOURCE(IDC_edit_Fileinformation), hWnd, About);
+            break;
+        case IDC_view_theme:                                                                                                  // 视图菜单
+            DialogBox(hInst, MAKEINTRESOURCE(IDC_view_theme), hWnd, About);
+            break;
+        case IDC_Components_Onlineaudio:                                                                                      // 组件菜单
+            DialogBox(hInst, MAKEINTRESOURCE(IDC_Components_Onlineaudio), hWnd, About);
+            break;
+        case IDC_Components_Onlinevideo:
+            DialogBox(hInst, MAKEINTRESOURCE(IDC_Components_Onlinevideo), hWnd, About);
+            break;
+        case IDC_Components_Cloudstorage:
+            DialogBox(hInst, MAKEINTRESOURCE(IDC_Components_Cloudstorage), hWnd, About);
+            break;
+        case IDC_Components_Compresseddocument:
+            DialogBox(hInst, MAKEINTRESOURCE(IDC_Components_Compresseddocument), hWnd, About);
+            break;
+        case IDC_Components_Audioextension:
+            DialogBox(hInst, MAKEINTRESOURCE(IDC_Components_Audioextension), hWnd, About);
+            break;
+        case IDC_Components_Videoextension:
+            DialogBox(hInst, MAKEINTRESOURCE(IDC_Components_Videoextension), hWnd, About);
+            break;
+        case IDC_Components_Multiuser:
+            DialogBox(hInst, MAKEINTRESOURCE(IDC_Components_Multiuser), hWnd, About);
+            break;
+        case IDC_Safety_Permissionsettings:                                                                                   // 安全菜单
+            DialogBox(hInst, MAKEINTRESOURCE(IDC_Safety_Permissionsettings), hWnd, About);
+            break;
+        case IDC_Safety_Passwordmanagement:
+            DialogBox(hInst, MAKEINTRESOURCE(IDC_Safety_Passwordmanagement), hWnd, About);
             break;
         default:
             return DefWindowProc(hWnd, message, wParam, lParam);

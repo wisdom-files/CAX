@@ -61,32 +61,32 @@ POPUP "编辑(&E)"
 BEGIN
 MENUITEM "预览", IDM_ABOUT
 MENUITEM "处理", IDM_ABOUT
-MENUITEM "删除", IDM_ABOUT
-MENUITEM "设置", IDM_ABOUT
-MENUITEM "使用外置程序打开", IDM_ABOUT
-MENUITEM "文件信息(&F)", IDM_ABOUT
+MENUITEM "删除", IDC_edit_delete
+MENUITEM "设置", IDC_edit_setting
+MENUITEM "使用外置程序打开", IDC_edit_Openwithexternalprogram
+MENUITEM "文件信息(&F)", IDC_edit_Fileinformation
 END
 
 POPUP "视图(&V)"
 BEGIN
-MENUITEM "主题(&X)", IDM_ABOUT
+MENUITEM "主题(&X)", IDC_view_theme
 END
 
 POPUP "组件(&Y)"
 BEGIN
-MENUITEM "在线音频支持", IDM_ABOUT
-MENUITEM "在线视频支持", IDM_ABOUT
-MENUITEM "云端网盘支持", IDM_ABOUT
-MENUITEM "压缩文档支持", IDM_ABOUT
-MENUITEM "音频扩展组件", IDM_ABOUT
-MENUITEM "视频扩展组件", IDM_ABOUT
-MENUITEM "多个用户支持", IDM_ABOUT
+MENUITEM "在线音频支持", IDC_Components_Onlineaudio
+MENUITEM "在线视频支持", IDC_Components_Onlinevideo
+MENUITEM "云端网盘支持", IDC_Components_Cloudstorage
+MENUITEM "压缩文档支持", IDC_Components_Compresseddocument
+MENUITEM "音频扩展组件", IDC_Components_Audioextension
+MENUITEM "视频扩展组件", IDC_Components_Videoextension
+MENUITEM "多个用户支持", IDC_Components_Multiuser
 END
 
 POPUP "安全(&S)"
 BEGIN
-MENUITEM "权限设置", IDM_ABOUT
-MENUITEM "密码管理", IDM_ABOUT
+MENUITEM "权限设置", IDC_Safety_Permissionsettings
+MENUITEM "密码管理", IDC_Safety_Passwordmanagement
 END
 
 POPUP "关于(&H)"
@@ -158,9 +158,19 @@ CAPTION "导入文件"
 FONT 9, "MS Shell Dlg", 0, 0, 0x1
 BEGIN
 ICON            IDR_MAINFRAME, IDC_STATIC, 14, 14, 21, 20
-LTEXT           "XIRcc, 版本 1.0", IDC_STATIC, 42, 14, 114, 8, SS_NOPREFIX
-LTEXT           "XIRCC.CN版权所有(c) 2020", IDC_STATIC, 42, 26, 114, 8
-DEFPUSHBUTTON   "OK", IDOK, 113, 41, 50, 14, WS_GROUP
+LTEXT           "请选择需要导入的文件...", IDC_STATIC, 42, 14, 114, 8, SS_NOPREFIX
+LTEXT           "文件自动导入的方式", IDC_STATIC, 42, 39, 114, 8
+LTEXT           "格式不支持文件的处理方法", IDC_STATIC, 42, 64, 114, 8
+LTEXT           "文件导入路径", IDC_STATIC, 42, 89, 114, 8
+LTEXT           "格式不支持文件的处理方法", IDC_STATIC, 42, 114, 114, 8
+LTEXT           "格式不支持文件的处理方法", IDC_STATIC, 42, 139, 114, 8
+DEFPUSHBUTTON   "选择文件", IDOK, 300, 12, 50, 14, WS_GROUP
+DEFPUSHBUTTON   "文件类型", IDOK, 300, 37, 50, 14, WS_GROUP
+DEFPUSHBUTTON   "禁止导入", IDOK, 300, 62, 50, 14, WS_GROUP
+DEFPUSHBUTTON   "选择路径", IDOK, 300, 87, 50, 14, WS_GROUP
+DEFPUSHBUTTON   "禁止导入", IDOK, 300, 112, 50, 14, WS_GROUP
+DEFPUSHBUTTON   "禁止导入", IDOK, 300, 137, 50, 14, WS_GROUP
+DEFPUSHBUTTON   "导入", IDOK, 175, 180, 50, 14, WS_GROUP
 END
 
 // 文件-新建-导出文件 (File-New-Export File)
@@ -170,13 +180,23 @@ CAPTION "导出文件"
 FONT 9, "MS Shell Dlg", 0, 0, 0x1
 BEGIN
 ICON            IDR_MAINFRAME, IDC_STATIC, 14, 14, 21, 20
-LTEXT           "XIRcc, 版本 1.0", IDC_STATIC, 42, 14, 114, 8, SS_NOPREFIX
-LTEXT           "XIRCC.CN版权所有(c) 2020", IDC_STATIC, 42, 26, 114, 8
-DEFPUSHBUTTON   "OK", IDOK, 113, 41, 50, 14, WS_GROUP
+LTEXT           "请选择需要导入的文件...", IDC_STATIC, 42, 14, 114, 8, SS_NOPREFIX
+LTEXT           "文件自动导入的方式", IDC_STATIC, 42, 39, 114, 8
+LTEXT           "格式不支持文件的处理方法", IDC_STATIC, 42, 64, 114, 8
+LTEXT           "文件导入路径", IDC_STATIC, 42, 89, 114, 8
+LTEXT           "格式不支持文件的处理方法", IDC_STATIC, 42, 114, 114, 8
+LTEXT           "格式不支持文件的处理方法", IDC_STATIC, 42, 139, 114, 8
+DEFPUSHBUTTON   "选择文件", IDOK, 300, 12, 50, 14, WS_GROUP
+DEFPUSHBUTTON   "文件类型", IDOK, 300, 37, 50, 14, WS_GROUP
+DEFPUSHBUTTON   "禁止导入", IDOK, 300, 62, 50, 14, WS_GROUP
+DEFPUSHBUTTON   "选择路径", IDOK, 300, 87, 50, 14, WS_GROUP
+DEFPUSHBUTTON   "禁止导入", IDOK, 300, 112, 50, 14, WS_GROUP
+DEFPUSHBUTTON   "禁止导入", IDOK, 300, 137, 50, 14, WS_GROUP
+DEFPUSHBUTTON   "导出", IDOK, 175, 180, 50, 14, WS_GROUP
 END
 
 // 文件-新建-文件信息 (File-New-File Information)
-IDC_NEW_FILES_information DIALOGEX 350, 270, 200, 425
+IDC_NEW_FILES_information DIALOGEX 234, 110, 400, 200
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "文件信息"
 FONT 9, "MS Shell Dlg", 0, 0, 0x1
@@ -187,14 +207,182 @@ LTEXT           "文件路径: E:\Wisdom Files 2020", IDC_STATIC, 16, 30, 114, 8
 LTEXT           "文件大小: 20MB", IDC_STATIC, 16, 46, 114, 8
 LTEXT           "文件类型: FLAC Audio streaming", IDC_STATIC, 16, 62, 114, 8
 LTEXT           "文件备注: 音乐 橙色", IDC_STATIC, 16, 78, 114, 8
-LTEXT           "持续时间: 4:33", IDC_STATIC, 16, 78, 114, 8
-DEFPUSHBUTTON   "关闭", IDOK, 74, 407, 50, 14, WS_GROUP
+LTEXT           "持续时间: 4:33", IDC_STATIC, 16, 94, 114, 8
+DEFPUSHBUTTON   "关闭", IDOK, 175,180, 50, 14, WS_GROUP
 END
 
 // 文件-新建-安全设置 (File-New-Security Settings)
 IDC_NEW_FILES_Safety DIALOGEX 234, 110, 400, 200
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "安全设置"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+ICON            IDR_MAINFRAME, IDC_STATIC, 14, 14, 21, 20
+LTEXT           "XIRcc, 版本 1.0", IDC_STATIC, 42, 14, 114, 8, SS_NOPREFIX
+LTEXT           "XIRCC.CN版权所有(c) 2020", IDC_STATIC, 42, 26, 114, 8
+DEFPUSHBUTTON   "保存", IDOK, 175, 180, 50, 14, WS_GROUP
+END
+
+// 编辑-删除 (edit delete)
+IDC_edit_delete DIALOGEX 234, 110, 400, 200
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "删除文件"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+ICON            IDR_MAINFRAME, IDC_STATIC, 14, 14, 21, 20
+LTEXT           "XIRcc, 版本 1.0", IDC_STATIC, 42, 14, 114, 8, SS_NOPREFIX
+LTEXT           "XIRCC.CN版权所有(c) 2020", IDC_STATIC, 42, 26, 114, 8
+DEFPUSHBUTTON   "OK", IDOK, 113, 41, 50, 14, WS_GROUP
+END
+
+// 编辑-设置 (Edit-Settings)
+IDC_edit_setting DIALOGEX 234, 110, 400, 200
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "设置"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+ICON            IDR_MAINFRAME, IDC_STATIC, 14, 14, 21, 20
+LTEXT           "XIRcc, 版本 1.0", IDC_STATIC, 42, 14, 114, 8, SS_NOPREFIX
+LTEXT           "XIRCC.CN版权所有(c) 2020", IDC_STATIC, 42, 26, 114, 8
+DEFPUSHBUTTON   "OK", IDOK, 113, 41, 50, 14, WS_GROUP
+END
+
+// 编辑-用外部程序打开 (Edit-Open with external program)
+IDC_edit_Openwithexternalprogram DIALOGEX 234, 110, 400, 200
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "外置程序打开..."
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+ICON            IDR_MAINFRAME, IDC_STATIC, 14, 14, 21, 20
+LTEXT           "XIRcc, 版本 1.0", IDC_STATIC, 42, 14, 114, 8, SS_NOPREFIX
+LTEXT           "XIRCC.CN版权所有(c) 2020", IDC_STATIC, 42, 26, 114, 8
+DEFPUSHBUTTON   "OK", IDOK, 113, 41, 50, 14, WS_GROUP
+END
+
+// 编辑-文件信息 (Edit-File Information)
+IDC_edit_Fileinformation DIALOGEX 234, 110, 400, 200
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "文件信息"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+ICON            IDR_MAINFRAME, IDC_STATIC, 14, 14, 21, 20
+LTEXT           "XIRcc, 版本 1.0", IDC_STATIC, 42, 14, 114, 8, SS_NOPREFIX
+LTEXT           "XIRCC.CN版权所有(c) 2020", IDC_STATIC, 42, 26, 114, 8
+DEFPUSHBUTTON   "OK", IDOK, 113, 41, 50, 14, WS_GROUP
+END
+
+// 视图-主题 (View-theme)
+IDC_view_theme DIALOGEX 234, 110, 400, 200
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "主题"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+ICON            IDR_MAINFRAME, IDC_STATIC, 14, 14, 21, 20
+LTEXT           "XIRcc, 版本 1.0", IDC_STATIC, 42, 14, 114, 8, SS_NOPREFIX
+LTEXT           "XIRCC.CN版权所有(c) 2020", IDC_STATIC, 42, 26, 114, 8
+DEFPUSHBUTTON   "OK", IDOK, 113, 41, 50, 14, WS_GROUP
+END
+
+// 组件-在线音频支持 (Components-Online Audio Support)
+IDC_Components_Onlineaudio DIALOGEX 234, 110, 400, 200
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "在线音频支持"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+ICON            IDR_MAINFRAME, IDC_STATIC, 14, 14, 21, 20
+LTEXT           "XIRcc, 版本 1.0", IDC_STATIC, 42, 14, 114, 8, SS_NOPREFIX
+LTEXT           "XIRCC.CN版权所有(c) 2020", IDC_STATIC, 42, 26, 114, 8
+DEFPUSHBUTTON   "OK", IDOK, 113, 41, 50, 14, WS_GROUP
+END
+
+// 组件-在线视频支持 (Components-online video support)
+IDC_Components_Onlinevideo DIALOGEX 234, 110, 400, 200
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "在线视频支持"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+ICON            IDR_MAINFRAME, IDC_STATIC, 14, 14, 21, 20
+LTEXT           "XIRcc, 版本 1.0", IDC_STATIC, 42, 14, 114, 8, SS_NOPREFIX
+LTEXT           "XIRCC.CN版权所有(c) 2020", IDC_STATIC, 42, 26, 114, 8
+DEFPUSHBUTTON   "OK", IDOK, 113, 41, 50, 14, WS_GROUP
+END
+
+// 组件-云端网盘支持 (Components-cloud network disk support)
+IDC_Components_Cloudstorage DIALOGEX 234, 110, 400, 200
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "云端网盘支持"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+ICON            IDR_MAINFRAME, IDC_STATIC, 14, 14, 21, 20
+LTEXT           "XIRcc, 版本 1.0", IDC_STATIC, 42, 14, 114, 8, SS_NOPREFIX
+LTEXT           "XIRCC.CN版权所有(c) 2020", IDC_STATIC, 42, 26, 114, 8
+DEFPUSHBUTTON   "OK", IDOK, 113, 41, 50, 14, WS_GROUP
+END
+
+// 组件-压缩文档支持 (Component-compressed document support)
+IDC_Components_Compresseddocument DIALOGEX 234, 110, 400, 200
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "压缩文档支持"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+ICON            IDR_MAINFRAME, IDC_STATIC, 14, 14, 21, 20
+LTEXT           "XIRcc, 版本 1.0", IDC_STATIC, 42, 14, 114, 8, SS_NOPREFIX
+LTEXT           "XIRCC.CN版权所有(c) 2020", IDC_STATIC, 42, 26, 114, 8
+DEFPUSHBUTTON   "OK", IDOK, 113, 41, 50, 14, WS_GROUP
+END
+
+// 组件-音频扩展组件 (Components-audio extension components)
+IDC_Components_Audioextension DIALOGEX 234, 110, 400, 200
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "音频扩展"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+ICON            IDR_MAINFRAME, IDC_STATIC, 14, 14, 21, 20
+LTEXT           "XIRcc, 版本 1.0", IDC_STATIC, 42, 14, 114, 8, SS_NOPREFIX
+LTEXT           "XIRCC.CN版权所有(c) 2020", IDC_STATIC, 42, 26, 114, 8
+DEFPUSHBUTTON   "OK", IDOK, 113, 41, 50, 14, WS_GROUP
+END
+
+// 组件-视频扩展组件 (Components-Video expansion components)
+IDC_Components_Videoextension DIALOGEX 234, 110, 400, 200
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "视频扩展"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+ICON            IDR_MAINFRAME, IDC_STATIC, 14, 14, 21, 20
+LTEXT           "XIRcc, 版本 1.0", IDC_STATIC, 42, 14, 114, 8, SS_NOPREFIX
+LTEXT           "XIRCC.CN版权所有(c) 2020", IDC_STATIC, 42, 26, 114, 8
+DEFPUSHBUTTON   "OK", IDOK, 113, 41, 50, 14, WS_GROUP
+END
+
+// 组件-多个用户支持 (Components-multiple user support)
+IDC_Components_Multiuser DIALOGEX 234, 110, 400, 200
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "多用户支持"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+ICON            IDR_MAINFRAME, IDC_STATIC, 14, 14, 21, 20
+LTEXT           "XIRcc, 版本 1.0", IDC_STATIC, 42, 14, 114, 8, SS_NOPREFIX
+LTEXT           "XIRCC.CN版权所有(c) 2020", IDC_STATIC, 42, 26, 114, 8
+DEFPUSHBUTTON   "OK", IDOK, 113, 41, 50, 14, WS_GROUP
+END
+
+// 安全-权限设置 (Security-permission settings)
+IDC_Safety_Permissionsettings DIALOGEX 234, 110, 400, 200
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "权限设置"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+ICON            IDR_MAINFRAME, IDC_STATIC, 14, 14, 21, 20
+LTEXT           "XIRcc, 版本 1.0", IDC_STATIC, 42, 14, 114, 8, SS_NOPREFIX
+LTEXT           "XIRCC.CN版权所有(c) 2020", IDC_STATIC, 42, 26, 114, 8
+DEFPUSHBUTTON   "OK", IDOK, 113, 41, 50, 14, WS_GROUP
+END
+
+// 安全-密码管理 (Security-Password Management)
+IDC_Safety_Passwordmanagement DIALOGEX 234, 110, 400, 200
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "密码管理"
 FONT 9, "MS Shell Dlg", 0, 0, 0x1
 BEGIN
 ICON            IDR_MAINFRAME, IDC_STATIC, 14, 14, 21, 20
